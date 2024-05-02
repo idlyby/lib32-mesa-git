@@ -17,7 +17,7 @@ pkgrel=1
 arch=('x86_64')
 makedepends=('python-mako' 'lib32-libxml2' 'xorgproto'
              'lib32-libvdpau' 'git' 'lib32-libglvnd' 'wayland-protocols' 
-             'meson' 'lib32-libva' 'lib32-libxrandr')
+             'meson' 'lib32-libva' 'lib32-libxrandr' 'python-packaging')
 depends=('mesa-git' 'lib32-gcc-libs' 'lib32-libdrm' 'lib32-wayland' 'lib32-libxxf86vm' 
          'lib32-libxdamage' 'lib32-libxshmfence' 'lib32-libelf' 'lib32-libunwind' 
          'lib32-lm_sensors' 'glslang' 'lib32-vulkan-icd-loader' 'lib32-zstd'
