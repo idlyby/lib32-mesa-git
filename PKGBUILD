@@ -12,7 +12,7 @@
 
 pkgname=lib32-mesa-git
 pkgdesc="an open-source implementation of the OpenGL specification, git version"
-pkgver=24.0.0_devel.179925.0e481bf4632.d41d8cd
+pkgver=24.2.0_devel.191637.b0b1907fa56.d41d8cd
 pkgrel=1
 arch=('x86_64')
 makedepends=('python-mako' 'lib32-libxml2' 'xorgproto'
@@ -76,8 +76,15 @@ case $MESA_WHICH_LLVM in
         ;;
     4)
         # extra/llvm
-        makedepends+=(lib32-llvm=17.0.6)
-        depends+=(lib32-llvm-libs=17.0.6)
+        makedepends+=(
+            'lib32-llvm=18.1.8'
+            'lib32-spirv-llvm-translator'
+            'lib32-spirv-tools')
+        depends+=(
+            'lib32-clang'
+            'lib32-llvm-libs=18.1.8'
+            'lib32-spirv-llvm-translator'
+            'lib32-spirv-tools')
         ;;
     *)
 esac
