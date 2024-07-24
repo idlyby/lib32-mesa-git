@@ -12,12 +12,12 @@
 
 pkgname=lib32-mesa-git
 pkgdesc="an open-source implementation of the OpenGL specification, git version"
-pkgver=24.3.0_devel.192421.3b6867f53a6.d41d8cd
+pkgver=24.3.0_devel.192433.e16a74c0237.27daf3f
 pkgrel=1
 arch=('x86_64')
 makedepends=('python-mako' 'lib32-libxml2' 'xorgproto'
              'lib32-libvdpau' 'git' 'lib32-libglvnd' 'wayland-protocols' 
-             'meson' 'lib32-libva' 'lib32-libxrandr' 'python-packaging' 'python-yaml')
+             'meson' 'lib32-libva' 'lib32-libxrandr' 'python-packaging' 'python-pyaml')
 depends=('mesa-git' 'lib32-gcc-libs' 'lib32-libdrm' 'lib32-wayland' 'lib32-libxxf86vm' 
          'lib32-libxdamage' 'lib32-libxshmfence' 'lib32-libelf' 'lib32-libunwind' 
          'lib32-lm_sensors' 'glslang' 'lib32-vulkan-icd-loader' 'lib32-zstd'
@@ -31,13 +31,16 @@ url="https://www.mesa3d.org"
 license=('custom')
 source=('mesa::git+https://gitlab.freedesktop.org/mesa/mesa.git#branch=main'
         'LICENSE'
-        'llvm32.native')
+        'llvm32.native'
+        '30311.patch')
 md5sums=('SKIP'
          '5c65a0fe315dd347e09b1f2826a1df5a'
-         '6b4a19068a323d7f90a3d3cd315ed1f9')
+         '6b4a19068a323d7f90a3d3cd315ed1f9'
+         '239d2b54d80616c8afcd038cb86d8875')
 sha512sums=('SKIP'
             '25da77914dded10c1f432ebcbf29941124138824ceecaf1367b3deedafaecabc082d463abcfa3d15abff59f177491472b505bcb5ba0c4a51bb6b93b4721a23c2'
-            'c7dbb390ebde291c517a854fcbe5166c24e95206f768cc9458ca896b2253aabd6df12a7becf831998721b2d622d0c02afdd8d519e77dea8e1d6807b35f0166fe')
+            'c7dbb390ebde291c517a854fcbe5166c24e95206f768cc9458ca896b2253aabd6df12a7becf831998721b2d622d0c02afdd8d519e77dea8e1d6807b35f0166fe'
+            '6e1a12dc1dbba6f64768aa7dc0ba45fbc62f2f32979ede31c9b3e4b54f637da6ebd926cf4f0a7e5bc08ba51e7a4835059dacf7ad13050f7c928a21a44b9a7b3c')
 
 # NINJAFLAGS is an env var used to pass commandline options to ninja
 # NOTE: It's your responbility to validate the value of $NINJAFLAGS. If unsure, don't set it.
@@ -142,7 +145,7 @@ build () {
         -D sysconfdir=/etc \
         --libdir=/usr/lib32 \
         -D platforms=x11,wayland \
-        -D gallium-drivers=r300,r600,radeonsi,nouveau,svga,swrast,virgl,iris,zink,crocus \
+        -D gallium-drivers=r300,r600,radeonsi,nouveau,svga,llvmpipe,virgl,iris,zink,crocus \
         -D vulkan-drivers=amd,intel,swrast,virtio,intel_hasvk \
         -D dri3=enabled \
         -D egl=enabled \
@@ -170,7 +173,7 @@ build () {
         -D microsoft-clc=disabled
 
     meson configure --no-pager _build
-    
+
     ninja  $NINJAFLAGS -C _build
 }
 
