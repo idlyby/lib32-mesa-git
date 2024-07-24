@@ -12,7 +12,7 @@
 
 pkgname=lib32-mesa-git
 pkgdesc="an open-source implementation of the OpenGL specification, git version"
-pkgver=24.3.0_devel.192433.e16a74c0237.27daf3f
+pkgver=24.3.0_devel.192434.c30e5d44b10.27daf3f
 pkgrel=1
 arch=('x86_64')
 makedepends=('python-mako' 'lib32-libxml2' 'xorgproto'
@@ -145,7 +145,7 @@ build () {
         -D sysconfdir=/etc \
         --libdir=/usr/lib32 \
         -D platforms=x11,wayland \
-        -D gallium-drivers=r300,r600,radeonsi,nouveau,svga,llvmpipe,virgl,iris,zink,crocus \
+        -D gallium-drivers=r300,r600,radeonsi,nouveau,svga,softpipe,llvmpipe,virgl,iris,zink,crocus \
         -D vulkan-drivers=amd,intel,swrast,virtio,intel_hasvk \
         -D dri3=enabled \
         -D egl=enabled \
