@@ -12,7 +12,7 @@
 
 pkgname=lib32-mesa-git
 pkgdesc="an open-source implementation of the OpenGL specification, git version"
-pkgver=24.3.0_devel.192434.c30e5d44b10.27daf3f
+pkgver=24.3.0_devel.192477.76ae27efb3c.d41d8cd
 pkgrel=1
 arch=('x86_64')
 makedepends=('python-mako' 'lib32-libxml2' 'xorgproto'
@@ -31,16 +31,13 @@ url="https://www.mesa3d.org"
 license=('custom')
 source=('mesa::git+https://gitlab.freedesktop.org/mesa/mesa.git#branch=main'
         'LICENSE'
-        'llvm32.native'
-        '30311.patch')
+        'llvm32.native')
 md5sums=('SKIP'
          '5c65a0fe315dd347e09b1f2826a1df5a'
-         '6b4a19068a323d7f90a3d3cd315ed1f9'
-         '239d2b54d80616c8afcd038cb86d8875')
+         '6b4a19068a323d7f90a3d3cd315ed1f9')
 sha512sums=('SKIP'
             '25da77914dded10c1f432ebcbf29941124138824ceecaf1367b3deedafaecabc082d463abcfa3d15abff59f177491472b505bcb5ba0c4a51bb6b93b4721a23c2'
-            'c7dbb390ebde291c517a854fcbe5166c24e95206f768cc9458ca896b2253aabd6df12a7becf831998721b2d622d0c02afdd8d519e77dea8e1d6807b35f0166fe'
-            '6e1a12dc1dbba6f64768aa7dc0ba45fbc62f2f32979ede31c9b3e4b54f637da6ebd926cf4f0a7e5bc08ba51e7a4835059dacf7ad13050f7c928a21a44b9a7b3c')
+            'c7dbb390ebde291c517a854fcbe5166c24e95206f768cc9458ca896b2253aabd6df12a7becf831998721b2d622d0c02afdd8d519e77dea8e1d6807b35f0166fe')
 
 # NINJAFLAGS is an env var used to pass commandline options to ninja
 # NOTE: It's your responbility to validate the value of $NINJAFLAGS. If unsure, don't set it.
