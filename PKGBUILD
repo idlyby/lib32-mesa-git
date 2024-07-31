@@ -12,7 +12,7 @@
 
 pkgname=lib32-mesa-git
 pkgdesc="an open-source implementation of the OpenGL specification, git version"
-pkgver=24.3.0_devel.192477.76ae27efb3c.d41d8cd
+pkgver=24.3.0_devel.192733.56ea4e4fa63.d41d8cd
 pkgrel=1
 arch=('x86_64')
 makedepends=('python-mako' 'lib32-libxml2' 'xorgproto'
@@ -167,7 +167,8 @@ build () {
         -D valgrind=disabled \
         -D tools=[] \
         -D zstd=enabled \
-        -D microsoft-clc=disabled
+        -D microsoft-clc=disabled \
+        -D legacy-x11=dri2
 
     meson configure --no-pager _build
 
