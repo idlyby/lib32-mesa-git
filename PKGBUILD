@@ -12,7 +12,7 @@
 
 pkgname=lib32-mesa-git
 pkgdesc="an open-source implementation of the OpenGL specification, git version"
-pkgver=24.3.0_devel.192733.56ea4e4fa63.d41d8cd
+pkgver=24.3.0_devel.194631.e0e7d8d910e.d41d8cd
 pkgrel=1
 arch=('x86_64')
 makedepends=('python-mako' 'lib32-libxml2' 'xorgproto'
@@ -20,9 +20,9 @@ makedepends=('python-mako' 'lib32-libxml2' 'xorgproto'
              'meson' 'lib32-libva' 'lib32-libxrandr' 'python-packaging' 'python-pyaml')
 depends=('mesa-git' 'lib32-gcc-libs' 'lib32-libdrm' 'lib32-wayland' 'lib32-libxxf86vm' 
          'lib32-libxdamage' 'lib32-libxshmfence' 'lib32-libelf' 'lib32-libunwind' 
-         'lib32-lm_sensors' 'glslang' 'lib32-vulkan-icd-loader' 'lib32-zstd'
+         'lib32-lm_sensors' 'glslang' 'lib32-vulkan-icd-loader' 'lib32-zstd' 
          'lib32-libxcb' 'lib32-libxfixes' 'lib32-expat' 'lib32-libxext' 'lib32-libx11'
-         'lib32-zlib' 'lib32-glibc'
+         'lib32-zlib' 'lib32-glibc'  'lib32-spirv-tools'
 )
 optdepends=('opengl-man-pages: for the OpenGL API man pages')
 provides=('lib32-mesa' 'lib32-vulkan-intel' 'lib32-vulkan-radeon' 'lib32-vulkan-mesa-layers' 'lib32-libva-mesa-driver' 'lib32-mesa-vdpau' 'lib32-mesa-libgl' 'lib32-opengl-driver' 'lib32-vulkan-driver')
@@ -60,8 +60,10 @@ fi
 case $MESA_WHICH_LLVM in
     1)
         # aur lone_wolf-llvm-git
-        makedepends+=('lib32-llvm-minimal-git')
-        depends+=('lib32-llvm-libs-minimal-git')
+        makedepends+=('lib32-llvm-minimal-git' 'libclc-minimal-git' 'lib32-spirv-tools' 'lib32-spirv-llvm-translator-minimal-git' 'lib32-clang-libs-minimal-git' 'clang-minimal-git'
+                        'clang-opencl-headers-minimal-git' 'lib32-clang-opencl-headers-minimal-git'
+        )
+        depends+=('lib32-llvm-libs-minimal-git'  'lib32-spirv-tools')
         ;;
     2)
         # aur llvm-git
@@ -144,12 +146,10 @@ build () {
         -D platforms=x11,wayland \
         -D gallium-drivers=r300,r600,radeonsi,nouveau,svga,softpipe,llvmpipe,virgl,iris,zink,crocus \
         -D vulkan-drivers=amd,intel,swrast,virtio,intel_hasvk \
-        -D dri3=enabled \
         -D egl=enabled \
         -D gallium-extra-hud=true \
         -D vulkan-layers=device-select,overlay \
         -D gallium-nine=true \
-        -D gallium-omx=disabled \
         -D gallium-opencl=disabled \
         -D gallium-va=enabled \
         -D gallium-vdpau=enabled \
