@@ -1,4 +1,5 @@
-# Maintainer: Reza Jahanbakhshi <reza.jahanbakhshi at gmail dot com
+# Maintainer: Edward Davis <idlyby@proton.me>
+# Contributor: Reza Jahanbakhshi <reza.jahanbakhshi at gmail dot com
 # Contributor: Lone_Wolf <lone_wolf@klaas-de-kat.nl>
 # Contributor: Armin K. <krejzi at email dot com>
 # Contributor: Kristian Klausen <klausenbusk@hotmail.com>
