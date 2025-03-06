@@ -151,7 +151,7 @@ build () {
     -D egl=enabled 
     -D gallium-extra-hud=true 
     -D gallium-nine=false 
-    -D gallium-opencl=disabled 
+    -D gallium-opencl=icd 
     -D gallium-rusticl=false
     -D gallium-va=enabled 
     -D gallium-vdpau=enabled 
