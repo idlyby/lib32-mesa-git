@@ -150,7 +150,7 @@ build () {
     -D gallium-drivers=radeonsi,softpipe,zink 
     -D egl=enabled 
     -D gallium-extra-hud=true 
-    -D gallium-nine=true 
+    -D gallium-nine=false 
     -D gallium-opencl=disabled 
     -D gallium-rusticl=false
     -D gallium-va=enabled 
