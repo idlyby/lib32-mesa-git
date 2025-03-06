@@ -170,7 +170,7 @@ build () {
     -D shared-glapi=enabled 
     -D valgrind=disabled 
     -D video-codecs=all
-    -D vulkan-drivers=amd,swrast 
+    -D vulkan-drivers=amd 
     -D vulkan-layers=device-select,overlay,screenshot
     -D vulkan-beta=true
     -D tools=[] 
