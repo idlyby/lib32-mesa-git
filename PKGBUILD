@@ -147,7 +147,7 @@ build () {
     -D b_ndebug=true
     -D b_lto=false
     -D buildtype=plain 
-    -D gallium-drivers=radeonsi,softpipe,llvmpipe,zink 
+    -D gallium-drivers=radeonsi,softpipe,zink 
     -D egl=enabled 
     -D gallium-extra-hud=true 
     -D gallium-nine=true 
@@ -166,7 +166,6 @@ build () {
     -D llvm=enabled 
     -D lmsensors=enabled
     -D microsoft-clc=disabled 
-    -D osmesa=true
     -D platforms=x11,wayland 
     -D shared-glapi=enabled 
     -D valgrind=disabled 
@@ -176,7 +175,6 @@ build () {
     -D vulkan-beta=true
     -D tools=[] 
     -D zstd=enabled 
-    -D legacy-x11=dri2
     --wrap-mode=nofallback 
     -D prefix=/usr 
     -D sysconfdir=/etc 
