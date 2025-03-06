@@ -13,7 +13,7 @@
 
 pkgname=lib32-mesa-git
 pkgdesc="an open-source implementation of the OpenGL specification, git version"
-pkgver=24.3.0_devel.194631.e0e7d8d910e.d41d8cd
+pkgver=25.1.0_devel.202766.69982e6f2f3.d41d8cd
 pkgrel=1
 arch=('x86_64')
 makedepends=(
@@ -151,7 +151,7 @@ build () {
     -D egl=enabled 
     -D gallium-extra-hud=true 
     -D gallium-nine=false 
-    -D gallium-opencl=icd 
+    -D gallium-opencl=disabled 
     -D gallium-rusticl=false
     -D gallium-va=enabled 
     -D gallium-vdpau=enabled 
