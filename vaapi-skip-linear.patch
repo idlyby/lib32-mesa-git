@@ -1,0 +1,14 @@
+diff --git a/src/gallium/drivers/radeonsi/si_uvd.c b/src/gallium/drivers/radeonsi/si_uvd.c
+index fb73273f40c..2fee7e89492 100644
+--- a/src/gallium/drivers/radeonsi/si_uvd.c
++++ b/src/gallium/drivers/radeonsi/si_uvd.c
+@@ -51,6 +51,9 @@ struct pipe_video_buffer *si_video_buffer_create_with_modifiers(struct pipe_cont
+       if (sscreen->info.vcn_ip_version < VCN_2_0_0 && mod != DRM_FORMAT_MOD_LINEAR)
+          continue;
+ 
++      if (mod != DRM_FORMAT_MOD_LINEAR && AMD_FMT_MOD_GET(TILE, mod) != AMD_FMT_MOD_TILE_GFX9_64K_S)
++         continue;
++
+       allowed_modifiers[allowed_modifiers_count++] = mod;
+    }
+ 
