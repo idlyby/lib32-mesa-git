@@ -154,7 +154,6 @@ build () {
     -D egl=enabled 
     -D gallium-extra-hud=true 
     -D gallium-nine=false 
-    -D gallium-opencl=disabled 
     -D gallium-rusticl=false
     -D gallium-va=enabled 
     -D gallium-vdpau=enabled 
@@ -170,7 +169,6 @@ build () {
     -D lmsensors=enabled
     -D microsoft-clc=disabled 
     -D platforms=x11,wayland 
-    -D shared-glapi=enabled 
     -D valgrind=disabled 
     -D video-codecs=all
     -D vulkan-drivers=amd 
