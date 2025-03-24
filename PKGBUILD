@@ -29,8 +29,13 @@ makedepends=(
   'python-mako' 
   'python-packaging' 
   'python-pyaml'
-  'lib32-llvm'
-  'lib32-spirv-llvm-translator'
+  'lib32-llvm-minimal-git'
+  'libclc-minimal-git'
+  'lib32-spirv-llvm-translator-minimal-git'
+  'lib32-clang-libs-minimal-git'
+  'clang-minimal-git'
+  'clang-opencl-headers-minimal-git'
+  'lib32-clang-opencl-headers-minimal-git'
   'lib32-spirv-tools'  
 )
 depends=(
@@ -54,9 +59,8 @@ depends=(
   'lib32-libx11'
   'lib32-zlib' 
   'lib32-glibc'  
-  'lib32-clang'
-  'lib32-llvm-libs'
-  'lib32-spirv-llvm-translator'
+  'lib32-llvm-libs-minimal-git'
+  'lib32-spirv-llvm-translator-minimal-git'
   'lib32-spirv-tools'
 )
 optdepends=('opengl-man-pages: for the OpenGL API man pages')
